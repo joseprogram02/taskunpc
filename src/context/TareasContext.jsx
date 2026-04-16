@@ -1,6 +1,5 @@
-import { createContext, useContext, useState, useEffect } from "react";
-
-const TareasContext = createContext();
+import { useState, useEffect } from "react";
+import { TareasContext } from "./TareasContextData";
 
 export function TareasProvider({ children }) {
   const [tareas, setTareas] = useState(() => {
@@ -41,8 +40,4 @@ export function TareasProvider({ children }) {
       {children}
     </TareasContext.Provider>
   );
-}
-
-export function useTareas() {
-  return useContext(TareasContext);
 }

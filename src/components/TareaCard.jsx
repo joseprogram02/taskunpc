@@ -1,4 +1,4 @@
-import { useTareas } from "../context/TareasContext";
+import { useTareas } from "../context/useTareas";
 import { Link } from "react-router-dom";
 
 function TareaCard({ tarea }) {

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useTareas } from "../context/TareasContext";
+import { useTareas } from "../context/useTareas";
 import { useNavigate } from "react-router-dom";
 
 function NuevaTarea() {

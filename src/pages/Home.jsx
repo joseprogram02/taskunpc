@@ -1,4 +1,4 @@
-import { useTareas } from "../context/TareasContext";
+import { useTareas } from "../context/useTareas";
 import { useState } from "react";
 import TareaCard from "../components/TareaCard";
 import { Link } from "react-router-dom";
