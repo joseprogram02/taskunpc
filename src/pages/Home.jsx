@@ -14,18 +14,41 @@ function Home() {
   });
 
   return (
-    <div>
-      <Link to="/nueva">
-        <button>+ Nueva Tarea</button>
-      </Link>
+    <div className="app-shell">
+      <div className="page-wrapper">
+        <div className="header-row">
+          <Link to="/nueva" className="link-button">
+            + Nueva Tarea
+          </Link>
 
-      <button onClick={() => setFiltro("todas")}>Todas</button>
-      <button onClick={() => setFiltro("pendientes")}>Pendientes</button>
-      <button onClick={() => setFiltro("completadas")}>Completadas</button>
+          <div className="filters">
+            <button
+              className={filtro === "todas" ? "secondary active" : "secondary"}
+              onClick={() => setFiltro("todas")}
+            >
+              Todas
+            </button>
+            <button
+              className={filtro === "pendientes" ? "secondary active" : "secondary"}
+              onClick={() => setFiltro("pendientes")}
+            >
+              Pendientes
+            </button>
+            <button
+              className={filtro === "completadas" ? "secondary active" : "secondary"}
+              onClick={() => setFiltro("completadas")}
+            >
+              Completadas
+            </button>
+          </div>
+        </div>
 
-      {tareasFiltradas.map(t => (
-        <TareaCard key={t.id} tarea={t} />
-      ))}
+        <div className="task-list">
+          {tareasFiltradas.map(t => (
+            <TareaCard key={t.id} tarea={t} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

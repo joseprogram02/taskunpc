@@ -95,6 +95,142 @@ p {
   margin: 0;
 }
 
+.app-shell {
+  width: min(1126px, 100%);
+  margin: 0 auto;
+  padding: 32px 16px 48px;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 28px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 28px 80px rgba(15, 23, 42, 0.12);
+  border: 1px solid rgba(92, 77, 255, 0.12);
+}
+
+.header-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+}
+
+.filters,
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+button,
+.link-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  border-radius: 999px;
+  padding: 11px 18px;
+  font: inherit;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+button:hover,
+.link-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 35px rgba(92, 77, 255, 0.18);
+}
+
+.link-button {
+  text-decoration: none;
+  color: #fff;
+  background: #5c4dff;
+}
+
+.secondary {
+  background: #f5f4ff;
+  color: #3d366f;
+}
+
+.secondary.active {
+  background: #5c4dff;
+  color: #fff;
+}
+
+.task-list {
+  display: grid;
+  gap: 16px;
+}
+
+.task-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 18px 22px;
+  border-radius: 20px;
+  border: 1px solid rgba(92, 77, 255, 0.12);
+  background: #ffffff;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+}
+
+.task-card.completed {
+  opacity: 0.72;
+}
+
+.task-title-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.task-card h3 {
+  margin: 0 0 6px;
+  font-size: 20px;
+  color: #16171d;
+}
+
+.task-meta {
+  margin: 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.task-checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: #5c4dff;
+}
+
+@media (max-width: 768px) {
+  .app-shell {
+    padding: 24px 16px 32px;
+  }
+
+  .page-wrapper {
+    padding: 20px;
+  }
+
+  .header-row,
+  .task-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .task-card {
+    justify-content: flex-start;
+  }
+
+  .task-checkbox {
+    align-self: flex-start;
+  }
+}
+
 code,
 .counter {
   font-family: var(--mono);

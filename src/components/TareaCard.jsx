@@ -5,15 +5,18 @@ function TareaCard({ tarea }) {
   const { toggleTarea } = useTareas();
 
   return (
-    <div style={{
-      opacity: tarea.completada ? 0.5 : 1,
-      textDecoration: tarea.completada ? "line-through" : "none"
-    }}>
-      <Link to={`/tarea/${tarea.id}`}>
-        <h3>{tarea.titulo}</h3>
-      </Link>
+    <div className={`task-card ${tarea.completada ? "completed" : ""}`}>
+      <div>
+        <Link to={`/tarea/${tarea.id}`} className="task-title-link">
+          <h3>{tarea.titulo}</h3>
+        </Link>
+        <p className="task-meta">
+          {tarea.materia} · {tarea.fecha}
+        </p>
+      </div>
 
       <input
+        className="task-checkbox"
         type="checkbox"
         checked={tarea.completada}
         onChange={() => toggleTarea(tarea.id)}
